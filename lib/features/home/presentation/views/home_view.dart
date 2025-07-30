@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
+import 'package:lottie/lottie.dart';
 import 'package:sukun/core/models/list_moods.dart';
 
 class HomeView extends StatelessWidget {
@@ -14,7 +15,17 @@ class HomeView extends StatelessWidget {
           return Container(
             width: MediaQuery.of(context).size.width,
             color: Color(moods[index].color),
-            child: Column(children: [Text(moods[index].moodName)]),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(moods[index].moodName),
+                Lottie.asset(
+                  moods[index].animationPath,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  width: MediaQuery.of(context).size.width * 0.6,
+                ),
+              ],
+            ),
           );
         },
       ),
