@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sukun/core/models/mood_model.dart';
+import 'package:sukun/features/home/presentation/widgets/custom_button.dart';
 
 class Pages extends StatelessWidget {
   const Pages({super.key, required this.mood});
@@ -26,23 +27,7 @@ class Pages extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.4,
             child: sizingByAnimation(mood.title, context),
           ),
-          Container(
-            alignment: Alignment.center,
-            width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.1,
-            decoration: BoxDecoration(
-              border: BoxBorder.all(
-                color: const Color.fromARGB(193, 255, 255, 255),
-                width: 3,
-              ),
-              borderRadius: BorderRadius.circular(16),
-              color: const Color.fromARGB(140, 255, 255, 255),
-            ),
-            child: Text(
-              "Read",
-              style: TextStyle(fontFamily: "SacrificeDemo", fontSize: 42),
-            ),
-          ),
+          CustomButton(ontap: () {}),
         ],
       ),
     );
