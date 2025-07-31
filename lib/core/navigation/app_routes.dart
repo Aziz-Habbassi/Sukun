@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sukun/features/home/presentation/views/home_view.dart';
+import 'package:sukun/features/reading/presentation/views/reading_view.dart';
 
 class AppRoutes {
   static final GoRouter router = GoRouter(
@@ -9,6 +10,12 @@ class AppRoutes {
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
           return const HomeView();
+        },
+      ),
+      GoRoute(
+        path: '/ReadingView',
+        builder: (BuildContext context, GoRouterState state) {
+          return const ReadingView();
         },
       ),
     ],

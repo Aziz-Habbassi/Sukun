@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sukun/core/models/mood_model.dart';
 import 'package:sukun/features/home/presentation/widgets/custom_button.dart';
@@ -27,7 +28,11 @@ class Pages extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.4,
             child: sizingByAnimation(mood.title, context),
           ),
-          CustomButton(ontap: () {}),
+          CustomButton(
+            ontap: () {
+              context.go("/ReadingView");
+            },
+          ),
         ],
       ),
     );
