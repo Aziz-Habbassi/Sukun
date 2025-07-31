@@ -1,13 +1,15 @@
 class MoodModel {
-  final String moodName;
+  final String title;
   final String animationPath;
   final String category;
   final int color;
+  final String font;
 
   MoodModel({
-    required this.moodName,
+    required this.title,
     required this.animationPath,
     required this.category,
     required this.color,
+    required this.font,
   });
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:lottie/lottie.dart';
 import 'package:sukun/core/models/list_moods.dart';
+import 'package:sukun/features/home/presentation/widgets/pages.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -12,21 +12,7 @@ class HomeView extends StatelessWidget {
       body: LiquidSwipe.builder(
         itemCount: moods.length,
         itemBuilder: (context, index) {
-          return Container(
-            width: MediaQuery.of(context).size.width,
-            color: Color(moods[index].color),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(moods[index].moodName),
-                Lottie.asset(
-                  moods[index].animationPath,
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  width: MediaQuery.of(context).size.width * 0.6,
-                ),
-              ],
-            ),
-          );
+          return Pages(mood: moods[index]);
         },
       ),
     );
