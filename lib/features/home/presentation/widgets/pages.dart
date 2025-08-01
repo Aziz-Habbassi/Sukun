@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sukun/core/models/emotions_model/emotion_model.dart';
+import 'package:sukun/core/models/message_model/message_model.dart';
 import 'package:sukun/core/models/mood_model/mood_model.dart';
 import 'package:sukun/features/home/presentation/widgets/custom_button.dart';
 
@@ -68,8 +68,8 @@ class Pages extends StatelessWidget {
 
     final List<dynamic> happyList = jsonMap['emotions']['happy'];
 
-    final List<Emotion> emotions = happyList
-        .map((e) => Emotion.fromJson(e))
+    final List<MessageModel> emotions = happyList
+        .map((e) => MessageModel.fromJson(e))
         .toList();
 
     for (var emotion in emotions) {
