@@ -103,6 +103,12 @@ flutter:
     - family: SacrificeDemo
       fonts:
         - asset: assets/fonts/SacrificeDemo-8Ox1B.ttf
+    - family: Arabic
+      fonts:
+        - asset: assets/fonts/Arabic-font.otf
+    - family: Lateef
+      fonts:
+        - asset: assets/fonts/Lateef-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
