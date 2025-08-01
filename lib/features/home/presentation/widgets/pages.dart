@@ -1,7 +1,12 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sukun/core/models/mood_model.dart';
+import 'package:sukun/core/models/emotions_model/emotion_model.dart';
+import 'package:sukun/core/models/mood_model/mood_model.dart';
 import 'package:sukun/features/home/presentation/widgets/custom_button.dart';
 
 class Pages extends StatelessWidget {
@@ -30,7 +35,7 @@ class Pages extends StatelessWidget {
           ),
           CustomButton(
             ontap: () {
-              context.go("/ReadingView");
+              loadEmotions();
             },
           ),
         ],
@@ -51,6 +56,30 @@ class Pages extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.3,
         width: MediaQuery.of(context).size.width * 0.5,
       );
+    }
+  }
+
+  Future<void> loadEmotions() async {
+    CollectionReference happy = FirebaseFirestore.instance.collection("happy");
+    final String jsonString = await rootBundle.loadString(
+      'assets/islamic_emotions_db.json',
+    );
+    final Map<String, dynamic> jsonMap = json.decode(jsonString);
+
+    final List<dynamic> happyList = jsonMap['emotions']['happy'];
+
+    final List<Emotion> emotions = happyList
+        .map((e) => Emotion.fromJson(e))
+        .toList();
+
+    for (var emotion in emotions) {
+      happy
+          .add({
+            "text": emotion.text,
+            "type": emotion.type,
+            "story": emotion.story,
+          })
+          .then((value) => print("done"));
     }
   }
 }

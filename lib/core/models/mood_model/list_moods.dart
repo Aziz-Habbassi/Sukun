@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sukun/core/models/mood_model.dart';
+import 'package:sukun/core/models/mood_model/mood_model.dart';
 
 final moods = [
   MoodModel(
