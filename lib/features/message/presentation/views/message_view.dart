@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sukun/features/reading/presentation/widgets/message_widget.dart';
-import 'package:sukun/features/reading/presentation/widgets/return_button.dart';
-import 'package:sukun/features/reading/presentation/widgets/title_widget.dart';
+import 'package:sukun/features/message/presentation/widgets/message_widget.dart';
+import 'package:sukun/features/message/presentation/widgets/return_button.dart';
+import 'package:sukun/features/message/presentation/widgets/title_widget.dart';
 
 class ReadingView extends StatelessWidget {
   const ReadingView({super.key});
