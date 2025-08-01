@@ -25,7 +25,7 @@ final moods = [
     font: "swimmingPool",
   ),
   MoodModel(
-    title: "Confused",
+    title: "Lost",
     animationPath: "assets/animations/confused.json",
     category: "Angry",
     color: const Color(0xff090040).toARGB32(),
