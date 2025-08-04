@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sukun/core/cubits/get_message/get_message_cubit.dart';
 import 'package:sukun/core/models/mood_model/mood_model.dart';
+import 'package:sukun/features/home/presentation/widgets/asking_widget.dart';
 import 'package:sukun/features/home/presentation/widgets/custom_button.dart';
 
 class Pages extends StatelessWidget {
@@ -17,28 +18,7 @@ class Pages extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            alignment: Alignment.center,
-            width: MediaQuery.of(context).size.width * 0.65,
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                  spreadRadius: 10,
-                  blurRadius: 25,
-                ),
-              ],
-            ),
-            child: Text(
-              "How Are You feeling Today ?",
-              style: TextStyle(
-                fontFamily: "Lateef",
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(232, 0, 0, 0),
-              ),
-            ),
-          ),
+          AskingWidget(),
           Text(
             mood.title,
             style: TextStyle(

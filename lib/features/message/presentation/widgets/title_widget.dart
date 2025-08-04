@@ -9,6 +9,10 @@ class TitleWidget extends StatelessWidget {
       "تذكّر، في كل شعور رسالة من الله",
       textAlign: TextAlign.center,
       style: TextStyle(
+        color: Color.fromARGB(255, 255, 255, 255),
+        shadows: [
+          Shadow(color: Color.fromARGB(255, 255, 255, 255), blurRadius: 20),
+        ],
         fontFamily: "Lateef",
         fontSize: 32,
         fontWeight: FontWeight.bold,
