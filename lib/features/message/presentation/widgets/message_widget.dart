@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sukun/core/models/message_model/message_model.dart';
 
 class MessageWidget extends StatelessWidget {
-  const MessageWidget({super.key});
-
+  const MessageWidget({super.key, required this.messageModel});
+  final MessageModel messageModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +20,7 @@ class MessageWidget extends StatelessWidget {
           Text(
             textAlign: TextAlign.center,
             textDirection: TextDirection.rtl,
-            "احْرِصْ على ما يَنفَعُكَ، واسْتَعِنْ بالله ولا تَعْجِزْ",
+            messageModel.text,
             style: TextStyle(fontFamily: "Arabic", fontSize: 32),
           ),
           SizedBox(height: 20),
@@ -31,7 +32,7 @@ class MessageWidget extends StatelessWidget {
             textDirection: TextDirection.rtl,
             style: TextStyle(fontFamily: "Arabic", fontSize: 24),
 
-            "قالها النبي لرجل متردد لا يعرف كيف يختار طريقه. علمه أن يسعى لما فيه فائدة ويطلب العون من الله، ولا يستسلم للتيه",
+            messageModel.story,
           ),
         ],
       ),

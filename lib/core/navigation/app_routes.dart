@@ -13,9 +13,9 @@ class AppRoutes {
         },
       ),
       GoRoute(
-        path: '/ReadingView',
+        path: '/MessageView',
         builder: (BuildContext context, GoRouterState state) {
-          return const ReadingView();
+          return ReadingView(title: state.extra as String);
         },
       ),
     ],

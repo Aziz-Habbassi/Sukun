@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sukun/core/cubits/get_message/get_message_cubit.dart';
 import 'package:sukun/core/navigation/app_routes.dart';
 import 'package:sukun/firebase_options.dart';
 
@@ -14,9 +16,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRoutes.router,
-      debugShowCheckedModeBanner: false,
+    return BlocProvider(
+      create: (context) => GetMessageCubit(),
+      child: MaterialApp.router(
+        routerConfig: AppRoutes.router,
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

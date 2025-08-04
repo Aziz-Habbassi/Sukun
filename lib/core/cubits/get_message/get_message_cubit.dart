@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';
+import 'package:sukun/core/models/message_model/message_model.dart';
 
 part 'get_message_state.dart';
 
@@ -16,9 +17,16 @@ class GetMessageCubit extends Cubit<GetMessageState> {
       );
       QuerySnapshot snapshot = await messages.get();
       List docs = snapshot.docs;
-      final Map<String, dynamic> randomDoc =
-          docs[Random().nextInt(docs.length)];
-      emit(GetMessageSucces());
+      final randomDoc = docs[Random().nextInt(docs.length)];
+      emit(
+        GetMessageSucces(
+          messageModel: MessageModel(
+            text: randomDoc['text'],
+            type: randomDoc['type'],
+            story: randomDoc['story'],
+          ),
+        ),
+      );
     } catch (e) {
       emit(GetMessageFaliure(errMessage: e.toString()));
     }

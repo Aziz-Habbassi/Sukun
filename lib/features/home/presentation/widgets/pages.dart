@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import 'package:sukun/core/cubits/get_message/get_message_cubit.dart';
 import 'package:sukun/core/models/mood_model/mood_model.dart';
 import 'package:sukun/features/home/presentation/widgets/custom_button.dart';
 
@@ -30,7 +32,10 @@ class Pages extends StatelessWidget {
           ),
           CustomButton(
             ontap: () {
-              context.go("/ReadingView");
+              BlocProvider.of<GetMessageCubit>(
+                context,
+              ).getMessage(mood.title.toLowerCase());
+              context.go('/MessageView', extra: mood.title);
             },
           ),
         ],
