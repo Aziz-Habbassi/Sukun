@@ -17,6 +17,28 @@ class Pages extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width * 0.65,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                  spreadRadius: 10,
+                  blurRadius: 25,
+                ),
+              ],
+            ),
+            child: Text(
+              "How Are You feeling Today ?",
+              style: TextStyle(
+                fontFamily: "Lateef",
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(232, 0, 0, 0),
+              ),
+            ),
+          ),
           Text(
             mood.title,
             style: TextStyle(
@@ -79,7 +101,7 @@ class Pages extends StatelessWidget {
   //           "type": emotion.type,
   //           "story": emotion.story,
   //         })
-  //         .then((value) => print("done lost"));
+  //         .then((value) => print("done"));
   //   }
   // }
 }
