@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import 'package:sukun/features/splash/presentation/widgets/splash_title_wiget.dart';
+import 'package:sukun/features/splash/presentation/widgets/start_button.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -28,47 +29,12 @@ class _SplashViewState extends State<SplashView> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "المشاعر ليست عبثًا... بل رسائل تنتظر أن تُفهم",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: const Color.fromARGB(255, 103, 1, 172),
-              fontSize: 32,
-              fontFamily: "Lateef",
-              fontWeight: FontWeight.w400,
-              shadows: [
-                Shadow(
-                  color: const Color.fromARGB(255, 124, 77, 255),
-                  blurRadius: 24,
-                ),
-              ],
-            ),
-          ),
+          SplashTitleWiget(),
           Lottie.asset("assets/animations/splash_animation.json"),
           SizedBox(
             height: 50,
             child: doneLoading
-                ? GestureDetector(
-                    onTap: () {
-                      context.go("/HomeView");
-                    },
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 150,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 53, 236, 191),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        "Start",
-                        style: TextStyle(
-                          fontFamily: "GT",
-                          fontSize: 24,
-                          color: const Color.fromARGB(255, 103, 1, 172),
-                        ),
-                      ),
-                    ),
-                  )
+                ? StartButton()
                 : SpinKitSquareCircle(
                     color: const Color.fromARGB(255, 53, 236, 191),
                   ),
