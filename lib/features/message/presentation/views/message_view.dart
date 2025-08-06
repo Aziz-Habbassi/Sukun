@@ -25,27 +25,39 @@ class ReadingView extends StatelessWidget {
         child: BlocBuilder<GetMessageCubit, GetMessageState>(
           builder: (context, state) {
             if (state is GetMessageSucces) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              return ListView(
                 children: [
+                  const SizedBox(height: 100),
                   const TitleWidget(),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   MessageWidget(messageModel: state.messageModel),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   const ReturnButton(),
                 ],
               );
             }
             if (state is GetMessageFaliure) {
               return Center(
-                child: Text(
-                  state.errMessage,
-                  style: TextStyle(color: Colors.white),
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: const Color.fromARGB(255, 216, 14, 0),
+                  ),
+                  child: Text(
+                    "Please Check Your internet connection !",
+                    style: TextStyle(
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
                 ),
               );
             } else {
               return Center(
-                child: Text("Loading", style: TextStyle(color: Colors.white)),
+                child: Text(
+                  "Loading ...",
+                  style: TextStyle(color: Colors.white),
+                ),
               );
             }
           },

@@ -37,7 +37,7 @@ class Pages extends StatelessWidget {
               BlocProvider.of<GetMessageCubit>(
                 context,
               ).getMessage(mood.title.toLowerCase());
-              context.go('/MessageView', extra: mood.title);
+              context.push('/MessageView', extra: mood.title);
             },
           ),
         ],

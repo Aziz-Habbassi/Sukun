@@ -7,10 +7,12 @@ class ReturnButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.go("/"),
+      onTap: () => context.pop(),
       child: Container(
+        margin: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * .25,
+        ),
         alignment: Alignment.center,
-        width: 200,
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
