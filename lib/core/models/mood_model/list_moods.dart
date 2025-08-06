@@ -6,7 +6,7 @@ final moods = [
     title: "Happy",
     animationPath: "assets/animations/happy.json",
     category: "Angry",
-    color: const Color.fromARGB(255, 18, 98, 245).toARGB32(),
+    color: const Color.fromARGB(255, 135, 6, 240).toARGB32(),
     font: "SuperSunday",
   ),
   MoodModel(
