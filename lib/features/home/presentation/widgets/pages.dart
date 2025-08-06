@@ -62,13 +62,13 @@ class Pages extends StatelessWidget {
   }
 
   // Future<void> loadEmotions() async {
-  //   CollectionReference happy = FirebaseFirestore.instance.collection("lost");
+  //   CollectionReference happy = FirebaseFirestore.instance.collection("happy");
   //   final String jsonString = await rootBundle.loadString(
   //     'assets/islamic_emotions_db.json',
   //   );
   //   final Map<String, dynamic> jsonMap = json.decode(jsonString);
 
-  //   final List<dynamic> happyList = jsonMap['emotions']['lost'];
+  //   final List<dynamic> happyList = jsonMap['emotions']['happy'];
 
   //   final List<MessageModel> emotions = happyList
   //       .map((e) => MessageModel.fromJson(e))

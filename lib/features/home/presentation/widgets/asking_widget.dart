@@ -19,6 +19,7 @@ class AskingWidget extends StatelessWidget {
       ),
       child: Text(
         "How Are You feeling Today ?",
+        textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: "Lateef",
           fontSize: 26,
